@@ -1,10 +1,12 @@
+from app.logic.codons import codoni
+
 
 def validazione(sequenza):
  nucleotidi= "ATCG"
- if nucleotidi not in sequenza:
-  return "La sequenza non è valida"   
- else:
-   return f"La sequenza è valida: {sequenza }"        
+ for nucleotide in sequenza:
+  if nucleotide not in nucleotidi:
+   return None    
+ return sequenza        
 
 def somma_sequenze(sequenza1, sequenza2):
  sequenza1=validazione(sequenza1)
@@ -46,15 +48,29 @@ def reverse(sequenza):
     "C": "G",
     "G": "C"
 })
+
     sequenza_complementare = sequenza.translate(conversione_nucleotidi)
     return sequenza_complementare
 
 
 def trascrizione(sequenza):
-    sequenza_complementare = reverse(sequenza)
-    sequenza_trascritta = sequenza_complementare.replace("T", "U")
-    sequenze= {
-        "Sequenza Complementare": sequenza_complementare,
-        "Sequenza Trascritta (RNA)": sequenza_trascritta
-    }
-    return sequenze
+    complementare = reverse(sequenza)
+    sequenza_trascritta = complementare.replace("T", "U")
+    return sequenza_trascritta
+
+
+def traduzione(sequenza):
+ sequenza_trascritta = trascrizione(sequenza)
+ triplette = []
+ for nucleotide in range(0, len(sequenza_trascritta), 3):
+  triplette.append(sequenza_trascritta[nucleotide:nucleotide+3])
+
+ risultati = []
+  
+ for t in triplette:
+  for codone in codoni.values():
+   for tripletta in codone:
+    if t == tripletta:
+        amminoacido = list(codoni.keys())[list(codoni.values()).index(codone)]
+        risultati.append(f"La tripletta {t} codifica per l'aminoacido {amminoacido}")
+ return f"La sequenza complementare è {sequenza_trascritta}, i codoni ottenuti sono {triplette}\n" + "\n".join(risultati)
