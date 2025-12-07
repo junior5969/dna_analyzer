@@ -42,6 +42,10 @@ def percentuale_coppie(sequenza):
 
 def reverse(sequenza):
     sequenza=validazione(sequenza)
+
+    if sequenza is None:
+        return "Sequenza non valida!"
+    
     conversione_nucleotidi = str.maketrans({
     "A": "T",
     "T": "A",
@@ -68,9 +72,19 @@ def traduzione(sequenza):
  risultati = []
   
  for t in triplette:
+  fermati = False
   for codone in codoni.values():
    for tripletta in codone:
     if t == tripletta:
         amminoacido = list(codoni.keys())[list(codoni.values()).index(codone)]
         risultati.append(f"La tripletta {t} codifica per l'aminoacido {amminoacido}")
+        if amminoacido == "Stop":
+         fermati = True
+         break
+    if fermati:
+        break
+  if fermati:
+     break
  return f"La sequenza complementare è {sequenza_trascritta}, i codoni ottenuti sono {triplette}\n" + "\n".join(risultati)
+#amminoacido -> indice della lista di valori -> chiave di quell'indice
+

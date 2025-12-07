@@ -25,4 +25,3 @@ from app.logic.codons import codoni
 sequenza = input("Inserisci la sequenza DNA: ").upper()
 sequenza_tradotta=traduzione(sequenza)
 print(sequenza_tradotta)
-
