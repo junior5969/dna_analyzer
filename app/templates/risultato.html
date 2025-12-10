@@ -1,0 +1,25 @@
+<!DOCTYPE html>     
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Analyzer</title>
+</head>
+<body>
+
+{% if conteggio %}
+  <p id="risultato">Conteggio nucleotidi: {{ conteggio }}</p>
+{% endif %}
+{% if percentuale %}
+  <p id="risultato">Percentuale delle coppie: {{ percentuale }}%</p>
+{% endif %}
+{% if sequenza_trascritta %}
+  <p id="risultato">Trascrizione: {{ sequenza_trascritta }}</p>
+{% endif %}
+{% if sequenza_tradotta %}
+  <p id="risultato">Traduzione: {{ sequenza_tradotta }}</p>
+{% endif %}
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

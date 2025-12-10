@@ -1,0 +1,25 @@
+<!DOCTYPE html>     
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Analyzer</title>
+</head>
+<body>
+
+
+    <input type="text" id="input-sequenza" name="sequenza" placeholder="Inserisci la sequenza DNA">
+
+<button type="submit" class="button" id="bottone-conteggio" name="azione" data-azione="conteggio">Conteggio nucleotidi</button>
+<button type="submit" class="button" id="bottone-percentuale" name="azione" data-azione="percentuale">Percentuale coppie</button>
+<button type="submit" class="button" id="bottone-trascrizione" name="azione" data-azione="trascrizione">Trascrizione</button>
+<button type="submit" class="button" id="bottone-traduzione" name="azione" data-azione="traduzione">Traduzione</button>
+
+
+
+ <p id="risultato"></p>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
