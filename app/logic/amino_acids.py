@@ -1,0 +1,23 @@
+
+amminoacidi = {
+"Acido aspartico":"D",
+"Acido glutammico":"E",
+"Alanina": "A",
+"Arginina": "R",
+"Asparagina":"N",
+"Cisteina": "C",
+"Glutammina": "Q",
+"Glicina": "G",
+"Istidina": "H",
+"Isoleucina": "I",
+"Leucina": "L",
+"Lisina": "K",
+"Metionina": "M",
+"Fenilalanin": "F",
+"Prolina": "P",
+"Serina": "S",
+"Treonina": "T",
+"Triptofano": "W",
+"Tirosina": "Y",
+"Valina": "V",
+}

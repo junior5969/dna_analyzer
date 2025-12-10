@@ -1,5 +1,5 @@
 from app.logic.codons import codoni
-
+from app.logic.amino_acids import amminoacidi
 
 def validazione(sequenza):
  nucleotidi= "ATCG"
@@ -65,9 +65,12 @@ def trascrizione(sequenza):
 
 def traduzione(sequenza):
  sequenza_trascritta = trascrizione(sequenza)
+ codone_di_inizio="AUG"
+ inidice_codone_di_inizio=sequenza_trascritta.find(codone_di_inizio)
+ sequenza_da_tradurre=sequenza_trascritta[inidice_codone_di_inizio:]
  triplette = []
- for nucleotide in range(0, len(sequenza_trascritta), 3):
-  triplette.append(sequenza_trascritta[nucleotide:nucleotide+3])
+ for nucleotide in range(0, len(sequenza_da_tradurre), 3):
+  triplette.append(sequenza_da_tradurre[nucleotide:nucleotide+3])
 
  risultati = []
   
@@ -77,7 +80,7 @@ def traduzione(sequenza):
    for tripletta in codone:
     if t == tripletta:
         amminoacido = list(codoni.keys())[list(codoni.values()).index(codone)]
-        risultati.append(f"La tripletta {t} codifica per l'aminoacido {amminoacido}")
+        risultati.append(amminoacido)
         if amminoacido == "Stop":
          fermati = True
          break
@@ -85,6 +88,13 @@ def traduzione(sequenza):
         break
   if fermati:
      break
- return f"La sequenza complementare è {sequenza_trascritta}, i codoni ottenuti sono {triplette}\n" + "\n".join(risultati)
+ proteina = []
+ for key in amminoacidi.keys():
+   for a in risultati:
+    if a == key:
+     sigla_amminoacido=(amminoacidi[key])
+     proteina.append(sigla_amminoacido)
+     proteina_str = ''.join(proteina)
+ return f"La sequenza complementare è {sequenza_trascritta} quella da tradurre è {sequenza_da_tradurre}, i codoni ottenuti sono {triplette}\n" + "\n".join(risultati) + f"\nGli amminoacidi risultanti sono: {proteina_str}"
 #amminoacido -> indice della lista di valori -> chiave di quell'indice
 
