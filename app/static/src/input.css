@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import "tailwindcss";
+
+.font-family {
+    font-family: "Josefin Sans", sans-serif;
+}
+.text-shadow {
+  text-shadow: 1px 1px 1px black;
+}
+
+.width-desktop {
+    width: 80%;
+    max-width: 500px;
+}
+
+.margin-title {
+    margin: 50px auto 40px auto
+}
+
+@media (min-width: 768px) {
+    .width-desktop {
+        width: 90%;
+        max-width: 1000px;
+        margin: 40px auto;
+    }
+
+    .margin-title {
+    margin:80px auto 60px auto;
+}
+}

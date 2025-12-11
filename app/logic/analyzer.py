@@ -17,32 +17,30 @@ def somma_sequenze(sequenza1, sequenza2):
   somma= sequenza1_valida + sequenza2_valida
   return somma
 
+def dizionario_nucleotidi(sequenza):
+ sequenza_valida = validazione(sequenza)
+ if sequenza_valida is None:
+        return None
+ conteggio = {"A": 0, "T": 0, "C": 0, "G": 0}
+ for base in sequenza:
+    conteggio[base] += 1
+ return conteggio
 
 def conteggio_nucleotidi(sequenza):
-  sequenza=validazione(sequenza)
-  if sequenza is None:
+  conteggio=dizionario_nucleotidi(sequenza)
+  if conteggio is None:
     return "Sequenza non valida"
-  conteggio = {}
-
-  for nucleotide in sequenza:
-        if nucleotide in conteggio:
-              conteggio[nucleotide] += 1
-        else:
-            conteggio[nucleotide] = 1
-  frequenza_a = conteggio.get("A", 0)
-  frequenza_t = conteggio.get("T", 0)
-  frequenza_c = conteggio.get("C", 0)
-  frequenza_g = conteggio.get("G", 0)
+  frequenza_a=conteggio["A"]
+  frequenza_t=conteggio["T"]
+  frequenza_c=conteggio["C"]
+  frequenza_g=conteggio["G"]
   return f"L'Adenina (A) è presente {frequenza_a} volte, la Timina (T) è presente {frequenza_t} volte, la Guanina (G) è presente {frequenza_g} volte e la Citosina (C) è presente {frequenza_c} volte."
 
 
 def percentuale_coppie(sequenza):
- sequenza= validazione(sequenza)
- if sequenza is None:
-    return "Sequenza non valida"    
- conteggio = {"A": 0, "T": 0, "C": 0, "G": 0}
- for n in sequenza:
-    conteggio[n] += 1
+ conteggio=dizionario_nucleotidi(sequenza)
+ if conteggio is None:
+    return "Sequenza non valida"
  frequenza_a=conteggio["A"]
  frequenza_t=conteggio["T"]
  frequenza_c=conteggio["C"]
@@ -71,7 +69,6 @@ def trascrizione(sequenza):
     complementare = reverse(sequenza)
     if complementare == "Sequenza non valida":
         return "Sequenza non valida"
-
     sequenza_trascritta = complementare.replace("T", "U")
     return f"La sequenza che si ottiene dalla trascrizione è: {sequenza_trascritta}"
 

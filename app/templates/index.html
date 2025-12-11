@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DNA Analyzer</title>
+    <link href="{{ url_for('static', filename='dist/output.css') }}" rel="stylesheet">
 </head>
 <body>
 
+<main class="font-family">
 
-    <input type="text" id="input-sequenza" name="sequenza" placeholder="Inserisci la sequenza DNA">
+    <h1 class="mx-auto margin-title width-desktop text-3xl md:text-4xl text-center text-blue-400 font-bold">DNA Analyzer</h1>
 
-<button type="submit" class="button" id="bottone-conteggio" name="azione" data-azione="conteggio">Conteggio nucleotidi</button>
-<button type="submit" class="button" id="bottone-percentuale" name="azione" data-azione="percentuale">Percentuale coppie</button>
-<button type="submit" class="button" id="bottone-trascrizione" name="azione" data-azione="trascrizione">Trascrizione</button>
-<button type="submit" class="button" id="bottone-traduzione" name="azione" data-azione="traduzione">Traduzione</button>
+<div class="flex flex-col md:flex-row md:flex-wrap justify-center items-center mx-auto my-0 width-desktop">
+    <input type="text" class="w-full md:w-9/12 mb-8 md:mb-14 px-4 py-2 text-base md:text-lg border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-200 transition duration-200 placeholder-gray-400" id="input-sequenza" name="sequenza" placeholder="Inserisci la sequenza DNA">
+
+<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded bg-sky-300 px-5 py-2.5 text-white text-base md:text-lg md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-conteggio" name="azione" data-azione="conteggio">
+    <span class="relative">Conteggio nucleotidi</span></button>
+<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded  bg-sky-300 px-5 py-2.5 text-white text-base md:text-lg md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-percentuale" name="azione" data-azione="percentuale">
+    <span class="relative">Percentuale coppie</span></button>
+<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded  bg-sky-300 px-5 py-2.5 text-white text-base md:text-lg md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-trascrizione" name="azione" data-azione="trascrizione">
+    <span class="relative">Trascrizione</span></button>
+<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded  bg-sky-300 px-5 py-2.5 text-white text-base md:text-lg md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-traduzione" name="azione" data-azione="traduzione">
+    <span class="relative">Traduzione</span></button>
+
+</div>
 
 
+ <p id="risultato" class="mx-auto my-0 mt-14 md:mt-16 width-desktop text-base md:text-xl"></p>
 
- <p id="risultato"></p>
-
+</main>
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 </body>

@@ -1,0 +1,23 @@
+# Python / Flask
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+instance/
+.env
+.env.*
+
+# Node / Tailwind / npm
+node_modules/
+package-lock.json
+yarn.lock
+dist/
+build/
+*.log
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
