@@ -13,7 +13,7 @@ amminoacidi = {
 "Leucina": "L",
 "Lisina": "K",
 "Metionina": "M",
-"Fenilalanin": "F",
+"Fenilalanina": "F",
 "Prolina": "P",
 "Serina": "S",
 "Treonina": "T",

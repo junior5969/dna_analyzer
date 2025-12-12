@@ -1,13 +1,14 @@
-from app import app
-from flask import request, jsonify, render_template
-from app.logic.analyzer import *
+from flask import Blueprint, request, jsonify
+from app.logic.conteggio import conteggio_nucleotidi
+from app.logic.percentuale import percentuale_coppie
+from app.logic.trascrizione import trascrizione
+from app.logic.traduzione import traduzione
+from app.logic.cerca_motivo import cerca_motivo 
 
-@app.route('/', methods=['GET'])
-def home():
-    return render_template("index.html")
+api = Blueprint("api", __name__)
 
 
-@app.route('/analizza', methods=['POST'])
+@api.route('/analizza', methods=['POST'])
 def analizza():
     data = request.get_json()  # riceve JSON dal fetch
 
@@ -15,6 +16,7 @@ def analizza():
         return jsonify({"errore": "Nessun JSON ricevuto"}), 400
 
     sequenza = data.get("sequenza")
+    motivo = data.get("motivo")
     azione = data.get("azione")
 
     if not sequenza or not azione:
@@ -29,6 +31,8 @@ def analizza():
             risultato = trascrizione(sequenza)
         elif azione == "traduzione":
             risultato = traduzione(sequenza)
+        elif azione == "motivo":
+            risultato = cerca_motivo(sequenza,motivo)
         else:
             return jsonify({"errore": "Azione sconosciuta"}), 400
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DNA Analyzer</title>
-    <link href="{{ url_for('static', filename='dist/output.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
 </head>
 <body>
 
@@ -15,15 +15,18 @@
 <div class="flex flex-col md:flex-row md:flex-wrap justify-center items-center mx-auto my-0 width-desktop">
     <input type="text" class="w-full md:w-9/12 mb-8 md:mb-14 px-4 py-2 text-base md:text-lg border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-200 transition duration-200 placeholder-gray-400" id="input-sequenza" name="sequenza" placeholder="Inserisci la sequenza DNA">
 
-<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded bg-sky-300 px-5 py-2.5 text-white text-base md:text-lg md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-conteggio" name="azione" data-azione="conteggio">
+<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded bg-sky-400 px-5 py-2.5 text-white text-lg md:text-xl md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-conteggio" name="azione" data-azione="conteggio">
     <span class="relative">Conteggio nucleotidi</span></button>
-<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded  bg-sky-300 px-5 py-2.5 text-white text-base md:text-lg md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-percentuale" name="azione" data-azione="percentuale">
+<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded  bg-sky-400 px-5 py-2.5 text-white text-lg md:text-xl md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-percentuale" name="azione" data-azione="percentuale">
     <span class="relative">Percentuale coppie</span></button>
-<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded  bg-sky-300 px-5 py-2.5 text-white text-base md:text-lg md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-trascrizione" name="azione" data-azione="trascrizione">
+<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded  bg-sky-400 px-5 py-2.5 text-white text-lg md:text-xl md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-trascrizione" name="azione" data-azione="trascrizione">
     <span class="relative">Trascrizione</span></button>
-<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded  bg-sky-300 px-5 py-2.5 text-white text-base md:text-lg md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-traduzione" name="azione" data-azione="traduzione">
+<button type="submit" class="button relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded  bg-sky-400 px-5 py-2.5 text-white text-lg md:text-xl md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-traduzione" name="azione" data-azione="traduzione">
     <span class="relative">Traduzione</span></button>
 
+<input type="text" class="w-full md:w-9/12 mb-8 md:mb-14 px-4 py-2 text-base md:text-lg border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-200 transition duration-200 placeholder-gray-400" id="input-sequenza-motivo" name="sequenza-motivo" placeholder="Inserisci il motivo">
+<button type="submit" class="bottone-input relative w-9/12 md:w-6/12 h-auto cursor-pointer mb-4 md:mb-8 md:mx-4 overflow-hidden rounded  bg-sky-400 px-5 py-2.5 text-white text-lg md:text-xl md:font-semibold text-shadow transition-all duration-300 hover:bg-sky-500 hover:ring-2 hover:ring-sky-500 hover:ring-offset-2" id="bottone-input" name="azione" data-azione="motivo">
+    <span class="relative">Cerca un motivo</span></button>
 </div>
 
 
