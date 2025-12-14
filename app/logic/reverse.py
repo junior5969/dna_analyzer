@@ -13,3 +13,7 @@ def reverse(sequenza):
     })
     sequenza_complementare = sequenza_validata.translate(conversione_nucleotidi)
     return sequenza_complementare
+
+
+def reverse_string(sequenza_complementare):
+    return f"La sequenza complementare è: {sequenza_complementare}"

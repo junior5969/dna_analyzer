@@ -33,9 +33,9 @@ from app.logic.amino_acids import amminoacidi
 # print(complementare)
 
 
-# sequenza = input("Inserisci la sequenza DNA: ").upper()
-# sequenza_tradotta=traduzione(sequenza)
-# print(sequenza_tradotta)
+sequenza = input("Inserisci la sequenza DNA: ").upper()
+sequenza_tradotta=traduzione(sequenza)
+print(sequenza_tradotta)
 
 
 # sequenza = input("Inserisci la sequenza DNA: ").upper()
@@ -102,9 +102,7 @@ from app.logic.amino_acids import amminoacidi
 # print(posizioni)
 
 
-
-sequenza = input("Inserisci la sequenza DNA: ").upper()
-motivo = input("Inserisci il motivo da cercare: ").upper()
-risultato = cerca_motivo(sequenza, motivo)
-
-print(risultato)
+# sequenza = input("Inserisci la sequenza DNA: ").upper()
+# motivo = input("Inserisci il motivo da cercare: ").upper()
+# risultato = cerca_motivo(sequenza, motivo)
+# print(risultato)

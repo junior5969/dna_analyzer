@@ -10,7 +10,7 @@ def traduzione(sequenza):
     triplette = []
     for nucleotide in range(0, len(sequenza_da_tradurre), 3):
         triplette.append(sequenza_da_tradurre[nucleotide:nucleotide+3])
-
+    stringa_triplette = ', '.join(triplette)
     risultati = []
 
     for t in triplette:
@@ -29,10 +29,9 @@ def traduzione(sequenza):
             break
 
     proteina = []
-    for key in amminoacidi.keys():
-        for a in risultati:
-            if a == key:
-                sigla_amminoacido = amminoacidi[key]
+    for a in risultati:
+     if a in amminoacidi.keys():
+                sigla_amminoacido = amminoacidi[a]
                 proteina.append(sigla_amminoacido)
     proteina_str = ''.join(proteina)
-    return f"La sequenza complementare è {sequenza_trascritta} quella da tradurre è {sequenza_da_tradurre}, i codoni ottenuti sono {triplette} e gli amminoacidi risultanti sono: {proteina_str}"
+    return f"La sequenza che si ottiene dalla trascrizione è: {sequenza_trascritta}, i codoni ottenuti sono: {stringa_triplette} e gli amminoacidi risultanti sono: {proteina_str}"
