@@ -28,8 +28,7 @@ def analizza():
         elif azione == "percentuale":
             risultato = percentuale_coppie(sequenza)
         elif azione == "trascrizione":
-            sequenza_trascritta=trascrizione(sequenza)
-            risultato = trascrizione_string(sequenza_trascritta)
+            risultato = trascrizione_string(trascrizione)
         elif azione == "traduzione":
             risultato = traduzione(sequenza)
         elif azione == "motivo":
