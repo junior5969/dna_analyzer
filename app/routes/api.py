@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+from app.logic.reverse import reverse
 from app.logic.conteggio import conteggio_nucleotidi
 from app.logic.percentuale import percentuale_coppie
 from app.logic.trascrizione import trascrizione, trascrizione_string
@@ -28,7 +29,9 @@ def analizza():
         elif azione == "percentuale":
             risultato = percentuale_coppie(sequenza)
         elif azione == "trascrizione":
-            risultato = trascrizione_string(trascrizione)
+            complementare = reverse(sequenza)
+            trascritta=trascrizione(sequenza)
+            risultato = trascrizione_string(complementare, trascritta)
         elif azione == "traduzione":
             risultato = traduzione(sequenza)
         elif azione == "motivo":
